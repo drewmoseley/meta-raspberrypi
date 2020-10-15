@@ -8,4 +8,4 @@ PACKAGECONFIG_append_rpi = "${@bb.utils.contains('MACHINE_FEATURES', 'vc4graphic
 PACKAGECONFIG_GL_VC4GRAPHICS = "${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'gles2 egl', '', d)}"
 PACKAGECONFIG_GL_rpi = "${@bb.utils.contains('MACHINE_FEATURES', 'vc4graphics', '${PACKAGECONFIG_GL_VC4GRAPHICS}', 'egl gles2', d)}"
 
-PACKAGECONFIG[dispmanx] = "--enable-dispmanx,--disable-dispmanx,userland"
+PACKAGECONFIG_rpi[dispmanx] = "--enable-dispmanx,--disable-dispmanx,userland"
